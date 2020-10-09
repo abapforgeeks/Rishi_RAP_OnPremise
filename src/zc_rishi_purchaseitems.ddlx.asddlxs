@@ -1,0 +1,66 @@
+@Metadata.layer: #CORE
+annotate view ZC_RISHI_PURCHASEITEMS with
+{
+  @UI.facet: [
+
+  {
+
+  id:'Collectionfacet',
+  type: #COLLECTION,
+  purpose: #STANDARD,
+  label: 'Item Info'
+  },
+
+  {
+
+  id: 'ItemInfogroup1',
+  type: #FIELDGROUP_REFERENCE,
+  parentId: 'Collectionfacet',
+  label: 'Item Details',
+  purpose: #STANDARD,
+  targetQualifier: 'FieldGroup1'
+
+  },
+
+
+  {
+  id:'VendorData',
+  type:#LINEITEM_REFERENCE,
+  purpose: #STANDARD,
+  targetElement: '_Vendor',
+  label: 'Vendor Data'
+
+  }
+
+  ]
+  //ZC_Rishi_PurchaseItems
+  @UI.lineItem: [{ position: 10, label: 'Purchase Document',importance: #HIGH }]
+  @UI.fieldGroup: [{position: 10 ,label: 'Purchase Document',qualifier: 'FieldGroup1' }]
+  PurchaseDocument;
+  @UI.lineItem: [{ position: 20, label: 'Purchase Document',importance: #HIGH }]
+  @UI.fieldGroup: [{position: 20 ,label: 'Item No',qualifier: 'FieldGroup1' }]
+  PurchaseItem;
+  @UI.identification: [{ position: 20 ,label: 'Item Description'}]
+  @UI.lineItem: [{ position: 30, label: 'Purchase Document',importance: #HIGH }]
+  @UI.fieldGroup: [{position: 30 ,label: 'Item Description',qualifier: 'FieldGroup1' }]
+  ItemDesc;
+  @UI.lineItem: [{ position: 40, label: 'Purchase Document',importance: #HIGH }]
+  @UI.fieldGroup: [{position: 40 ,label: 'Vendor',qualifier: 'FieldGroup1' }]
+  Vendor;
+  @UI.lineItem: [{ position: 50, label: 'Purchase Document',importance: #HIGH }]
+  @UI.fieldGroup: [{position: 50 ,label: 'Price',qualifier: 'FieldGroup1' }]
+  Price;
+  @UI.lineItem: [{ position: 60, label: 'Purchase Document',importance: #HIGH }]
+  TotalPrice;
+  @UI.lineItem: [{ position: 70, label: 'Purchase Document',importance: #HIGH }]
+  @UI.identification: [{ position: 60 ,label: 'Currency'}]
+  @UI.fieldGroup: [{position: 60 ,label: 'Currency',qualifier: 'FieldGroup1' }]
+  Currency;
+  @UI.lineItem: [{ position: 80, label: 'Purchase Document',importance: #HIGH }]
+  @UI.fieldGroup: [{position: 70 ,label: 'Quantity',qualifier: 'FieldGroup1' }]
+  Quantity;
+  @UI.lineItem: [{ position: 90, label: 'unit',importance: #HIGH }]
+  @UI.fieldGroup: [{position: 80 ,label: 'Unit',qualifier: 'FieldGroup1' }]
+  Unit;
+
+}

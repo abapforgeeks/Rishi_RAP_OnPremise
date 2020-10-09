@@ -1,0 +1,22 @@
+projection;
+
+define behavior for ZC_RISHI_PurchaseDoc //alias <alias_name>
+use etag
+{
+  use create;
+  use update;
+  use delete;
+  use action set_status_close as setStatusClose;
+
+  use association _PURCHASEITEMS { create; }
+  field ( readonly ) PurchaseDocument, TotalPrice, Currency, CreatedBy, CreatedOn, ChangedBy;
+  field ( mandatory ) PurchaseDesc, PurchaseStatus;
+
+}
+
+define behavior for ZC_RISHI_PURCHASEITEMS //alias <alias_name>
+{
+  use create;
+  use update;
+  use delete;
+}
