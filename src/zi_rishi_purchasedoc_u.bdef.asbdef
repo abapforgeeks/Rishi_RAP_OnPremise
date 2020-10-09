@@ -12,7 +12,8 @@ etag ChangedBy
   action set_status_close result [1] $self ;
   field ( readonly ) PurchaseDocument, TotalPrice, Currency, CreatedBy, CreatedOn, ChangedBy;
   field ( mandatory ) PurchaseDesc, PurchaseStatus;
-
+//  validation validateStatus on save { field PurchaseStatus; }
+// determination createKeys on modify { create ; }
   association _PurchaseItems { create; }
   mapping for zrishi_podoc
   {
